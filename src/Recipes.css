@@ -14,18 +14,18 @@
 
 .container {
   background-color: white;
+  border-radius: 10px;
   margin: 10px;
   padding: 8px;
-  border-radius: 10px;
 }
 
 .container-img {
   background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 8px;
   padding-top: 8px;
-  border-radius: 10px;
 }
 
 .recipe {
@@ -35,7 +35,7 @@
   width: 50%;
 }
 
-.imgRecipes {
+.img-recipes {
   border-radius: 10px;
   width: 98%;
 }

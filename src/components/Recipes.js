@@ -171,7 +171,7 @@ export default function Recipes() {
                   src={ recipe.strMealThumb }
                   alt={ `${recipe.strMeal} thumb` }
                   data-testid={ `${index}-card-img` }
-                  className="imgRecipes"
+                  className="img-recipes"
                 />
                 <p
                   data-testid={ `${index}-card-name` }
@@ -195,7 +195,7 @@ export default function Recipes() {
                   src={ recipe.strDrinkThumb }
                   alt={ `${recipe.strDrink} thumb` }
                   data-testid={ `${index}-card-img` }
-                  className="imgRecipes"
+                  className="img-recipes"
                 />
                 <p
                   data-testid={ `${index}-card-name` }

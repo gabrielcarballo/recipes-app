@@ -7,7 +7,6 @@ function Drinks() {
   return (
     <>
       <Header pageName="Drinks" />
-      <p>Drinks</p>
       <Recipes />
       <Footer />
     </>

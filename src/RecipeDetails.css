@@ -1,8 +1,10 @@
 .buttonFooter {
+  background-color: rgb(59, 56, 56);
   bottom: 0;
-  height: 2.5rem;
+  color: rgb(246, 250, 250);
+  height: 1.5rem;
   position: fixed;
-  width: 100%;
+  width: 25%;
 }
 
 .cards {
@@ -13,7 +15,10 @@
 }
 
 .imgRecipes {
-  height: 200px;
+  border-radius: 2.5em;
+  height: 10em;
+  padding: 1em 2.3em;
+  width: 80%;
 }
 
 .cards > img {

@@ -23,16 +23,28 @@ function Profile() {
   }, []);
 
   return (
-    <>
+    <div className="back">
       <Header pageName="Profile" />
       <div className="div-profile">
         <p data-testid="profile-email" className="profile-p">{email}</p>
         <div className="div-link">
           <Link to="/done-recipes">
-            <button className="profile-button" type="button" data-testid="profile-done-btn">Done Recipes</button>
+            <button
+              className="profile-button"
+              type="button"
+              data-testid="profile-done-btn"
+            >
+              Done Recipes
+            </button>
           </Link>
           <Link to="/favorite-recipes">
-            <button className="profile-button" type="button" data-testid="profile-favorite-btn">Favorite Recipes</button>
+            <button
+              className="profile-button"
+              type="button"
+              data-testid="profile-favorite-btn"
+            >
+              Favorite Recipes
+            </button>
           </Link>
           <button
             className="profile-button"
@@ -45,7 +57,7 @@ function Profile() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

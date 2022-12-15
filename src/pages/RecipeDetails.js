@@ -151,17 +151,6 @@ export default function RecipeDetails() {
 
   return (
     <>
-      <button type="button" onClick={ buttonShareIcon }>
-        <img data-testid="share-btn" src={ shareIcon } alt="Share" />
-      </button>
-      { copied ? <span /> : <p>Link copied!</p>}
-      <button type="button" onClick={ buttonFavorite }>
-        <img
-          data-testid="favorite-btn"
-          src={ favoriteBtn ? whiteHeartIcon : blackHeartIcon }
-          alt="Favorite"
-        />
-      </button>
       { drinks && drinks.map((e, i) => (
         <div key={ i }>
           <img
@@ -170,6 +159,17 @@ export default function RecipeDetails() {
             alt={ e.strDrink }
             className="imgRecipes"
           />
+          <button type="button" onClick={ buttonShareIcon }>
+            <img data-testid="share-btn" src={ shareIcon } alt="Share" />
+          </button>
+          { copied ? <span /> : <p>Link copied!</p>}
+          <button type="button" onClick={ buttonFavorite }>
+            <img
+              data-testid="favorite-btn"
+              src={ favoriteBtn ? whiteHeartIcon : blackHeartIcon }
+              alt="Favorite"
+            />
+          </button>
           <h3 data-testid="recipe-title">{ e.strDrink }</h3>
           <p data-testid="recipe-category">{ e.strAlcoholic }</p>
           <h4>Ingredients</h4>
@@ -206,6 +206,17 @@ export default function RecipeDetails() {
             alt={ e.strMeal }
             className="imgRecipes"
           />
+          <button type="button" onClick={ buttonShareIcon }>
+            <img data-testid="share-btn" src={ shareIcon } alt="Share" />
+          </button>
+          { copied ? <span /> : <p>Link copied!</p>}
+          <button type="button" onClick={ buttonFavorite }>
+            <img
+              data-testid="favorite-btn"
+              src={ favoriteBtn ? whiteHeartIcon : blackHeartIcon }
+              alt="Favorite"
+            />
+          </button>
           <h3 data-testid="recipe-title">{ e.strMeal }</h3>
           <p data-testid="recipe-category">{ e.strCategory }</p>
           <h4>Ingredients</h4>
