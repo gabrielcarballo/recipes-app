@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import '../RecipeDetails.css';
+import '../Recipes.css';
 
 export default function Recipes() {
   const [mealsRecipes, setMealsRecipes] = useState('');
@@ -117,79 +117,100 @@ export default function Recipes() {
   }, [meals, drinks]);
 
   return (
-    <>
-      {mealsCategories ? (
-        mealsCategories.map((category, index) => (
-          <button
-            key={ index }
-            type="button"
-            data-testid={ `${category.strCategory}-category-filter` }
-            value={ category.strCategory }
-            onClick={ fetchBySelectedMealCategory }
-          >
-            {category.strCategory}
-          </button>
-        ))
-      ) : (
-        <p />
-      )}
+    <div className="container">
       <button
         type="button"
+        className="button"
         data-testid="All-category-filter"
         onClick={ fetchRecipes }
       >
         All
       </button>
-      {drinksCategories ? (
-        drinksCategories.map((drinkCategory, index) => (
-          <button
-            key={ index }
-            type="button"
-            data-testid={ `${drinkCategory.strCategory}-category-filter` }
-            value={ drinkCategory.strCategory }
-            onClick={ fetchBySelectedDrinkCategory }
-          >
-            {drinkCategory.strCategory}
-          </button>
-        ))
-      ) : (
-        <p />
-      )}
+      <div className="div-buttons">
+        {mealsCategories ? (
+          mealsCategories.map((category, index) => (
+            <button
+              key={ index }
+              className="button"
+              type="button"
+              data-testid={ `${category.strCategory}-category-filter` }
+              value={ category.strCategory }
+              onClick={ fetchBySelectedMealCategory }
+            >
+              {category.strCategory}
+            </button>
+          ))
+        ) : (
+          <p />
+        )}
+      </div>
+      <div className="div-buttons">
+        {drinksCategories ? (
+          drinksCategories.map((drinkCategory, index) => (
+            <button
+              className="button"
+              key={ index }
+              type="button"
+              data-testid={ `${drinkCategory.strCategory}-category-filter` }
+              value={ drinkCategory.strCategory }
+              onClick={ fetchBySelectedDrinkCategory }
+            >
+              {drinkCategory.strCategory}
+            </button>
+          ))
+        ) : (
+          <p />
+        )}
+      </div>
+      <div className="container-img">
+        {mealsRecipes ? (
+          mealsRecipes.map((recipe, index) => (
+            <div key={ index } data-testid={ `${index}-recipe-card` } className="recipe">
+              <Link to={ `/meals/${recipe.idMeal}` } className="link">
+                <img
+                  src={ recipe.strMealThumb }
+                  alt={ `${recipe.strMeal} thumb` }
+                  data-testid={ `${index}-card-img` }
+                  className="imgRecipes"
+                />
+                <p
+                  data-testid={ `${index}-card-name` }
+                  className="title"
+                >
+                  {recipe.strMeal}
+                </p>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p />
+        )}
+      </div>
+      <div className="container-img">
+        {drinksRecipes ? (
+          drinksRecipes.map((recipe, index) => (
+            <div key={ index } data-testid={ `${index}-recipe-card` } className="recipe">
+              <Link to={ `/drinks/${recipe.idDrink}` } className="link">
+                <img
+                  src={ recipe.strDrinkThumb }
+                  alt={ `${recipe.strDrink} thumb` }
+                  data-testid={ `${index}-card-img` }
+                  className="imgRecipes"
+                />
+                <p
+                  data-testid={ `${index}-card-name` }
+                  className="title"
+                >
+                  {recipe.strDrink}
 
-      {mealsRecipes ? (
-        mealsRecipes.map((recipe, index) => (
-          <div key={ index } data-testid={ `${index}-recipe-card` }>
-            <Link to={ `/meals/${recipe.idMeal}` }>
-              <img
-                src={ recipe.strMealThumb }
-                alt={ `${recipe.strMeal} thumb` }
-                data-testid={ `${index}-card-img` }
-                className="imgRecipes"
-              />
-              <p data-testid={ `${index}-card-name` }>{recipe.strMeal}</p>
-            </Link>
-          </div>
-        ))
-      ) : (
-        <p />
-      )}
-      {drinksRecipes ? (
-        drinksRecipes.map((recipe, index) => (
-          <div key={ index } data-testid={ `${index}-recipe-card` }>
-            <Link to={ `/drinks/${recipe.idDrink}` }>
-              <img
-                src={ recipe.strDrinkThumb }
-                alt={ `${recipe.strDrink} thumb` }
-                data-testid={ `${index}-card-img` }
-                className="imgRecipes"
-              />
-              <p data-testid={ `${index}-card-name` }>{recipe.strDrink}</p>
-            </Link>
-          </div>
-        ))
-      ) : (
-        <p />
-      )}
-    </>
+                </p>
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p />
+        )}
+      </div>
+    </div>
   );
 }

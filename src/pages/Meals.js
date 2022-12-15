@@ -7,7 +7,6 @@ function Meals() {
   return (
     <>
       <Header pageName="Meals" />
-      <p>Meals</p>
       <Recipes />
       <Footer />
     </>

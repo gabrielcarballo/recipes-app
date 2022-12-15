@@ -1,6 +1,16 @@
 footer {
+  background-color: white;
   bottom: 0;
-  height: 2.5rem;
+  height: 1.4rem;
+  left: 84%;
   position: fixed;
   width: 100%;
+}
+
+footer img {
+  background-color: beige;
+}
+
+footer button {
+  background-color: beige;
 }

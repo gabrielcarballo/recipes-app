@@ -1,0 +1,23 @@
+.profile-p {
+  font-family: Arial , Helvetica , sans-serif;
+  font-size: 1em;
+  margin-bottom: 10px;
+  margin-left: 62%;
+  width: 15%;
+}
+
+.div-profile {
+  display: block;
+}
+
+.div-link {
+  display: flex;
+  margin: 1.2em 4em;
+  width: 50%;
+}
+
+.profile-button {
+  border: 0.3em;
+  margin: 0.2em;
+  width: 80px;
+}

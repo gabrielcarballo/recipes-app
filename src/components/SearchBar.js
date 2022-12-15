@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { fetchWithFilterMeals, fetchWithFilterDrinks } from '../redux/actions';
+import '../SearchBar.css';
 
 export default function SearchBar({ search }) {
   const MAX_LENGTH = 1;
@@ -85,6 +86,7 @@ export default function SearchBar({ search }) {
       </label>
       <button
         type="button"
+        className="search"
         data-testid="exec-search-btn"
         onClick={ () => handleDispatch() }
       >
