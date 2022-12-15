@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import '../RecipeDetails.css';
+import '../FavoriteRecipes.css';
 
 function FavoriteRecipes() {
   const [copied, setCopied] = useState(true);
@@ -57,30 +58,33 @@ function FavoriteRecipes() {
   return (
     <>
       <Header pageName="Favorite Recipes" />
-      <button data-testid="filter-by-meal-btn" type="button" onClick={ buttonMeals }>
-        Meals
-      </button>
-      <button data-testid="filter-by-drink-btn" type="button" onClick={ buttonDrinks }>
-        Drinks
-      </button>
-      <button data-testid="filter-by-all-btn" type="button" onClick={ buttonAll }>
-        All
-      </button>
+      <div className="button-favorites">
+        <button data-testid="filter-by-meal-btn" type="button" onClick={ buttonMeals } className="btn">
+          Meals
+        </button>
+        <button data-testid="filter-by-drink-btn" type="button" onClick={ buttonDrinks } className="btn">
+          Drinks
+        </button>
+        <button data-testid="filter-by-all-btn" type="button" onClick={ buttonAll } className="btn">
+          All
+        </button>
+      </div>
       { favorites?.map((e, i) => (
         e.type === 'meal'
           ? (
             <div key={ i }>
-              <Link to={ `/meals/${e.id}` }>
+              <Link to={ `/meals/${e.id}` } className="link-fav">
                 <img
                   data-testid={ `${i}-horizontal-image` }
                   src={ e.image }
                   alt={ e.name }
                   className="imgRecipes"
                 />
-                <h3 data-testid={ `${i}-horizontal-name` }>{ e.name }</h3>
+                <h3 data-testid={ `${i}-horizontal-name` } className="name">{ e.name }</h3>
               </Link>
               <p
                 data-testid={ `${i}-horizontal-top-text` }
+                className="name"
               >
                 { `${e.nationality} - ${e.category}` }
               </p>
@@ -102,16 +106,16 @@ function FavoriteRecipes() {
             </div>)
           : (
             <div key={ i }>
-              <Link to={ `/drinks/${e.id}` }>
+              <Link to={ `/drinks/${e.id}` } className="link-fav">
                 <img
                   data-testid={ `${i}-horizontal-image` }
                   src={ e.image }
                   alt={ e.name }
                   className="imgRecipes"
                 />
-                <h3 data-testid={ `${i}-horizontal-name` }>{ e.name }</h3>
+                <h3 data-testid={ `${i}-horizontal-name` } className="name">{ e.name }</h3>
               </Link>
-              <p data-testid={ `${i}-horizontal-top-text` }>{ e.alcoholicOrNot }</p>
+              <p data-testid={ `${i}-horizontal-top-text` } className="name">{ e.alcoholicOrNot }</p>
               <button type="button" onClick={ () => buttonShareIcon(e.id, e.type) }>
                 <img
                   data-testid={ `${i}-horizontal-share-btn` }
